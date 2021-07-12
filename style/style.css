@@ -24,8 +24,6 @@ main
 
 .navbar
 {
-    width: 5rem;
-    height: 100vh;
     position: fixed;
     background-color: var(--bg-primary);
     transition: width 0.25s ease;
@@ -80,16 +78,6 @@ main
     display: none;
 }
 
-.navbar:hover
-{
-    width: 16rem;
-}
-
-.navbar:hover .link-text
-{
-    display: block;
-}
-
 .bx
 {
     color: #df49a6;
@@ -109,22 +97,64 @@ main
     letter-spacing: 0.3ch;
     width: 100%;
 }
-.logo a
-{
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between;
-}
+
 .logo span
 {
     margin-left: 1rem;
 }
+
 .logo i
 {
+    position: absolute;
+    right:0;
     transform: rotate(0deg);
     transition: transform var(--transition-speed);
 }
 .navbar:hover .logo i
 {
     transform: rotate(-180deg);
+}
+
+@media only screen and (max-width: 600px) 
+{
+    .navbar
+    {
+        bottom: 0;
+        width: 100vw;
+        height: 5rem;
+    }
+    .logo
+    {
+        display: none;
+    }
+    .navbar-nav
+    {
+        flex-direction: row;
+    }
+    .nav-link
+    {
+        justify-content: center;
+    }
+    main
+    {
+        margin: 0;
+    }
+}
+
+@media only screen and (min-width: 600px) 
+{
+    .navbar
+    {
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+    }
+    .navbar:hover
+    {
+        width: 16rem;
+    }
+    .navbar:hover .link-text
+    {
+        display: block;
+    }
 }
